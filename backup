@@ -11,7 +11,7 @@ from kivy.uix.button import ButtonBehavior
 
 Window.size = (360, 800)
 
-class WindowManager (ScreenManager):
+class Manager (ScreenManager):
     #Classe Root que vai lidar com transição de Screens
     pass
 
@@ -72,7 +72,10 @@ class Podfy(App):
     inter_bold = os.path.join('resources', 'fontes', 'Inter', 'static', 'Inter-Bold.ttf')
     
     def build(self):
-        return WindowManager()
+        sm = ScreenManager()
+        sm.add_widget(RegisterScreen(name='register_screen'))
+        sm.add_widget(LoginScreen(name='login_screen'))
+        return sm
 
 
 #Só vai rodar a aplicação se este arquivo (main.py) for executado individualmente (Ou seja, dando um "python main.py"). Se for importado e executado através de outro arquivo, não vai executar o conteúdo da função abaixo!
