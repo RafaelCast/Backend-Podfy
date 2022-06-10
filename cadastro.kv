@@ -1,16 +1,3 @@
-#:import FadeTransition kivy.uix.screenmanager.FadeTransition
-#:import NoTransition kivy.uix.screenmanager.NoTransition
-#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
-
-### CONTROLE DO SCREEN MANAGER
-<WindowManager>
-    transition: NoTransition()
-    LoginScreen:
-        name: 'login_screen'
-    RegisterScreen:
-        name: 'register_screen'
-###########################################################################
-
 <Button>
     font_name: app.inter_bold
 
@@ -215,7 +202,6 @@
         Rectangle:
             pos:self.pos
             size:self.size
-
     BoxLayout:
         orientation: "vertical"
         size: root.width, root.height #Define a BoxLayout com o tamanho da tela!
