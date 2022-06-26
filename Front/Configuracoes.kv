@@ -64,6 +64,17 @@
     height: 32
     color: (1,1,1,1)
 
+<NoContentMessage@Label>
+    text:'Ainda não há nada aqui'
+    font_name: app.inter_bold
+    font_size: 16
+    size_hint: 1, None
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    text_size: self.size
+    halign: 'center'
+    valign: 'center'
+    color: (1,1,1,1)
+
 
 <GrayButton@HoverBehavior+Button>
     size_hint: None, None
@@ -216,7 +227,7 @@
         FirstTitleLabel:
             text:'Plano Premium'
         SecondTitleLabel:
-            text:'Detalhes do seu plano'
+            text:'Usuário Premium vitalício'
 
         FirstTitleLabel:
             text:'Email'
@@ -228,11 +239,21 @@
         EmptySpace:
             height: 5
 
+###########################################################
         FirstTitleLabel:
             text:'Bloquear Conteúdo Inapropriado'
             font_size: 16
-        SecondTitleLabel:
-            text:'Oculte conteúdos impróprios e/ou sem censura'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 40
+            SecondTitleLabel:
+                text:'Oculte conteúdos impróprios e/ou sem censura'
+            MDSwitch:
+            EmptySpace:
+                width: 10
+
 
         EmptySpace:
             height: 5
@@ -240,8 +261,16 @@
         FirstTitleLabel:
             text:'Downloads apenas em Wifi'
             font_size: 16
-        SecondTitleLabel:
-            text:'Faça o downloads apenas quando conectado em rede Wifi'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 40
+            SecondTitleLabel:
+                text:'Faça o downloads apenas quando conectado em rede Wifi'
+            MDSwitch:
+            EmptySpace:
+                width: 10
 
         EmptySpace:
             height: 5
@@ -249,8 +278,16 @@
         FirstTitleLabel:
             text:'Economia de Dados'
             font_size: 16
-        SecondTitleLabel:
-            text:'Limitar a qualidade do áudio para reduzir o uso de Dados'
+            
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 40
+            SecondTitleLabel:
+                text:'Limitar a qualidade do áudio para reduzir o uso de Dados'
+            MDSwitch:
+            EmptySpace:
+                width: 10
 
         Widget:
             #Ocupa o espaço Inferior
@@ -316,7 +353,7 @@
 
         MDTextField:
             hint_text: 'Sobre'
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            text: "Escreva aqui algo sobre você!"
             multiline: True
             font_size: 14
             font_name: app.inter_medium

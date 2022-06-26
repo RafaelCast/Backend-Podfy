@@ -21,6 +21,44 @@
 
         ScreenTitle:
             text: 'Downloads'
+        EmptySpace:
+            height: 10
+        # NoContentMessage:
+        #     text:'Ainda não há nada aqui'
 
-        Widget:
-            #Ocupa o espaço Inferior
+        MDBoxLayout:
+            orientation: 'vertical'
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                size: self.size
+                DownloadList:
+
+
+
+
+
+<DownloadList>
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgb: (1,0,0,1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+
+<ListItem>
+    orientation:'horizontal'
+    
+    Image:
+        source: root.imgRef #pega a variável imgRef da classe ListItem
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: root.itemName
+        Label:
+            text: root.authorName
+
+
+
