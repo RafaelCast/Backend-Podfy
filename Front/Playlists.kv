@@ -21,6 +21,60 @@
 
         ScreenTitle:
             text: 'Playlists'
+        EmptySpace:
+            height: 10
 
-        Widget:
-            #Ocupa o espaço Inferior
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                size: self.size
+                MDList:
+                    ItemLista:
+                        text: 'Nome da Playlist'
+                        secondary_text: 'Criada por Podfy'
+                        ImageLeftWidget:
+                            source: app.playlist1
+                            size_hint: None, None
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                            size: 50,50
+
+                    ItemLista:
+                        text: 'Playlist #01'
+                        secondary_text: 'Criada por Você'
+                        ImageLeftWidget:
+                            source: app.playlist2
+                            size_hint: None, None
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                            size: 50,50
+
+                    ItemLista:
+                        text: 'Adicionar Playlist'
+                        secondary_text: 'Criar uma nova playlist'
+
+                        ImageLeftWidget:
+                            ButtonImg:
+                                source: app.add_icon
+                                size_hint: None, None
+                                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                                size: 41,41
+
+                                on_enter:
+                                    self.source = app.add_icon_hover
+                                on_leave:
+                                    self.source = app.add_icon
+
+
+<ItemLista@TwoLineAvatarListItem>
+    theme_text_color: 'Custom'
+    text_color: [1,1,1,1]
+    font_style: "InterBold"
+
+    secondary_theme_text_color: 'Custom'
+    secondary_text_color: utils.get_color_from_hex('#B5B5B5')
+    secondary_font_style: "InterSemibold"
+    
+    on_release:
+        print('Adicionar nova Playlist')

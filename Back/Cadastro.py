@@ -194,5 +194,3 @@ class Validar:
             dialog = MDDialog(text = "A caixa de seleção não foi marcada")
             dialog.open()
 
-
-    
