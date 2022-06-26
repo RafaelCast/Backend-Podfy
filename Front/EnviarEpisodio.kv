@@ -1,0 +1,195 @@
+
+
+
+########################   Tela de Enviar Episódio   ###################################### 
+<UploadScreen>
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {'center_x': 0.5, 'top': 1}
+        padding: [15,15,15,15]
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex(app.bg_dark_lighter)
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        TopBar:
+            #NavBar Padrão
+        EmptySpace:
+            height: 10 
+
+        ScreenTitle:
+            text: 'Enviar Episódio'
+
+        EmptySpace:
+            height: 30
+
+        ButtonImg:
+            source: app.add_icon
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_enter:
+                self.source = app.add_icon_hover
+            on_leave:
+                self.source = app.add_icon
+            on_release:
+                print('envia o arquivo')
+        
+
+        Label:
+            text: "Envie seu arquivo"
+            font_name: app.inter_medium
+            font_size: 16
+            color: utils.get_color_from_hex('B5B5B5')
+            size_hint: None,None
+            pos_hint: {'center_x': 0.5}
+            height: 40
+
+        EmptySpace:
+            height: 15
+
+        FieldLabel:
+            text: "Título do Episódio"
+
+        UploadInputField:
+            hint_text: 'Digite o título do seu episódio'
+
+        EmptySpace:
+            height: 10
+
+        FieldLabel:
+            text: "Descrição do episódio"
+        
+        UploadInputField:
+            hint_text: 'Digite a descrição do seu episódio'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 75
+
+            Label:
+                text: 'Temporada nº'
+            UploadInputField:
+                pos_hint: {'center_y': 0.5}
+                size_hint: None, None
+                halign: 'center'
+                size: 48,32
+
+            EmptySpace:
+                width: 10
+
+            Label:
+                text: 'Episódios nº'
+            UploadInputField:
+                pos_hint: {'center_y': 0.5}
+                size_hint: None, None
+                halign: 'center'
+                size: 48,32
+
+        FirstTitleLabel:
+            text:'Conteúdo Explícito'
+            font_size: 16
+            halign: 'left'
+            valign: 'center'
+            height: 20
+            
+        EmptySpace:
+            height: 5
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 40
+            SecondTitleLabel:
+                text:'Este episódio contém algum conteúdo sensível?'
+            MDSwitch:
+            
+            EmptySpace:
+                width: 10
+        
+        EmptySpace:
+            height: 20
+            
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: 60
+
+            ButtonImg:
+                source: app.add_icon
+                size_hint: None, None
+                pos_hint: {'left': 1, 'center_y': 0.5}
+                size: 52,52
+
+                on_enter:
+                    self.source = app.add_icon_hover
+                on_leave:
+                    self.source = app.add_icon
+                on_release:
+                    print('envia o arquivo')
+
+            EmptySpace:
+                width: 20
+            
+            Label:
+                text: 'Envie uma capa'
+                font_name: app.inter_semibold
+                font_size: 16
+                color: utils.get_color_from_hex('#B5B5B5')
+                text_size: self.size
+                halign: 'left'
+                valign: 'center'
+        
+        EmptySpace:
+            height: 20
+            
+        RoundButton:
+            text: "Enviar Episódio"
+            size_hint: None, None
+            size: 160, 40
+            font_size: 16
+
+            canvas.before:
+                Color:
+                    rgba: (254/255, 194/255, 0, 1)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [20,20,20,20]
+
+            on_press:
+                print('Envia o episódio')
+
+        Widget:
+
+
+
+
+<FieldLabel@Label>
+    padding: (0,20)
+    font_size:16
+    font_name: app.inter_semibold
+    color: [1,1,1,1]
+    text_size: self.size
+    halign: 'left'
+    valign: 'center'
+    size_hint: 1,None
+    height: 45
+    canvas.before:
+        Color:
+            rgba: (1,0,0,0)
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<UploadInputField@StrokeInputField>        
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#B5B5B5')
+        Line:
+            width: 1.0
+            rounded_rectangle: self.x, self.y, self.width, self.height, 8, 50
+
+

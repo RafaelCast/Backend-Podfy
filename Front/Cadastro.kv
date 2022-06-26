@@ -56,15 +56,12 @@
     height: 40
     pos_hint: {'center_x': 0.5}
     font_name: app.inter_regular
-    color: '#4F5357'
-    font_size:14
+    font_size: 14
     padding: [10, (self.height-self.line_height)/2] #Alinha o texto de forma vertical e com um pequeno espaçamento horizontal
-    back_color: (79/255, 83/255, 87/255, 1)
-    color: self.back_color
     cursor_color: '#FEC200'
     canvas.before:
         Color:
-            rgba: self.back_color
+            rgba: utils.get_color_from_hex('#4F5357')
         Line:
             width: 1.0
             rounded_rectangle: self.x, self.y, self.width, self.height, 8, 50 #rounded_rectangle: x, y, width, height, corner_radius, resolution
@@ -316,6 +313,7 @@
             pos_hint: {'center_x': 0.5}
             on_release:
                 root.manager.current = 'home_screen'
+                
 
         EmptySpace:
             height: 10
