@@ -7,6 +7,7 @@ Builder.load_file("Front/Pesquisa.kv")
 Builder.load_file("Front/Configuracoes.kv")
 Builder.load_file("Front/Playlists.kv")
 Builder.load_file("Front/Downloads.kv")
+Builder.load_file("Front/EnviarEpisodio.kv")
 
 app = Flask(__name__)
 
@@ -140,6 +141,9 @@ class PlaylistScreen(Screen):
 
 
 class HomeScreen(Screen):
+    pass
+
+class UploadScreen(Screen):
     pass
 
 class DownloadScreen(Screen):
