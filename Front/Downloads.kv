@@ -23,8 +23,6 @@
             text: 'Downloads'
         EmptySpace:
             height: 10
-        # NoContentMessage:
-        #     text:'Ainda não há nada aqui'
 
         MDBoxLayout:
             orientation: 'vertical'
@@ -32,7 +30,9 @@
                 do_scroll_x: False
                 do_scroll_y: True
                 size: self.size
-                DownloadList:
+                # DownloadList:
+                NoContentMessage:
+                    text:'Ainda não há nada aqui'
 
 
 
@@ -40,12 +40,12 @@
 
 <DownloadList>
     orientation: 'vertical'
-    canvas.before:
-        Color:
-            rgb: (1,0,0,1)
-        Rectangle:
-            pos:self.pos
-            size:self.size
+    # canvas.before:
+    #     Color:
+    #         rgb: (1,0,0,1)
+    #     Rectangle:
+    #         pos:self.pos
+    #         size:self.size
 
 
 <ListItem>
@@ -53,12 +53,26 @@
     
     Image:
         source: root.imgRef #pega a variável imgRef da classe ListItem
+        size_hint: None, None
+        size: 70,70
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     BoxLayout:
         orientation: 'vertical'
+
         Label:
             text: root.itemName
+            font_name: app.inter_semibold
+            font_size: 16
+            color: (1,1,1,1)
+            size_hint: 1, None
+            padding: [10,0]
+            height: 20
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text_size: self.size
+            halign: 'left'
+            valign: 'center'
+
         Label:
             text: root.authorName
-
 
 
