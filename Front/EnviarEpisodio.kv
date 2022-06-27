@@ -3,6 +3,9 @@
 
 ########################   Tela de Enviar Episódio   ###################################### 
 <UploadScreen>
+
+    envEp: EnvEp
+
     BoxLayout:
         orientation: "vertical"
         pos_hint: {'center_x': 0.5, 'top': 1}
@@ -25,16 +28,18 @@
             height: 30
 
         ButtonImg:
+            id: EnvEp
             source: app.add_icon
             size_hint: None, None
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
 
             on_enter:
                 self.source = app.add_icon_hover
             on_leave:
                 self.source = app.add_icon
             on_release:
-                print('envia o arquivo')
+                root.post_arquivo()
         
 
         Label:

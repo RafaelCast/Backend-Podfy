@@ -47,6 +47,8 @@ import Back.Crypt
 # importações Cadastro
 from Back.Cadastro import *
 
+from Back.Upload import *
+
 
 
 
